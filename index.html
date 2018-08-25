@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jgthms/minireset.css/master/minireset.css">
+    <link rel="stylesheet" href="css/debug.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app" :style="{ background: background() }">
+
+        <p 
+            v-html="wizard + ' ' + (
+                wizard == harry ? hedwig :
+                wizard == ron ? scabbers :
+                wizard == hermione ? crookshanks : ''
+            )"
+        ></p>
+
+        <template v-if="true" style=>
+				<p v-html="harry    + ' ' + hedwig     "></p>
+				<p v-html="ron      + ' ' + scabbers   "></p>
+				<p v-html="hermione + ' ' + crookshanks"></p>
+        </template>
+
+        <p v-for="wizard in wizards()"
+            v-html="wizard.name + ' ' + wizard.pet">
+        </p>
+
+        <wizard :name="harry"    :cast="oculus_reparo"     ></wizard>
+        <wizard :name="ron"      :cast="wingardium_leviosa"></wizard>
+        <wizard :name="hermione" :cast="alohomora"         ></wizard>
+
+        <p @click="animagus" v-html="active" :class="breathe()"></p>
+            
+    </div>
+    
+    <script src="js/index.js"></script>
+</body>
+</html>

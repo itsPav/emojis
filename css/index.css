@@ -1,0 +1,33 @@
+
+/* resets */
+* { color: inherit; }
+input { font: inherit; border: unset; background: unset; }
+input:focus { outline: unset; }
+
+:root {
+	font: 1rem/1.175 "BlinkMacSystemFont", -apple-system, "Roboto", sans-seri;
+}
+
+#app {
+	display: flex;
+	flex-direction: column; justify-content: center; align-items: center;
+	font-weight: 900; font-size: 8rem;
+	color: hsl(0, 0%, 100%);
+	background: hsl(240, 100%, 67%);
+}
+
+input { text-align: center; }
+
+img {
+	width: 8rem; height: 8rem;
+	vertical-align: calc(-0.12109375em);
+}
+
+.breathe--man { animation: breathe 4.0s infinite; }
+.breathe--dog { animation: breathe 0.5s infinite; }
+
+@keyframes breathe {
+	  0% { transform: scale(0.95); }
+	 50% { transform: scale(1.05); }
+	100% { transform: scale(0.95); }
+}
